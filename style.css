@@ -4,7 +4,7 @@
    Integrated Full Copy & Structure Design System
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=General+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 /* ==========================================================================
    COLOR PALETTE — NATURAL EARTH TONES
@@ -30,13 +30,14 @@
   --c-earth-12:      rgba(132, 97, 61, 0.12);
   --c-earth-08:      rgba(132, 97, 61, 0.08);
 
-  /* Typography System */
-  --font-display-serif: 'Cormorant Garamond', 'Fraunces', Georgia, serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body:    'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Trending Luxury Typography System */
+  --font-display-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Spacing Rhythm */
-  --pad-section: clamp(90px, 10vw, 150px);
+  /* Optimized Section Dimensions & Rhythm */
+  --pad-section: clamp(100px, 11vw, 160px);
+  --container-width: 1420px;
   --transition-natural: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -101,9 +102,9 @@ button {
    UTILITIES
    ========================================================================== */
 .container {
-  max-width: 1380px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 3.5rem;
+  padding: 0 4rem;
 }
 
 .section-eyebrow {
