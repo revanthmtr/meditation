@@ -1,41 +1,50 @@
 /* ==========================================================================
    KUMBHAKA DHYĀNA ĀŚRAMAM
-   Natural, Organic & Realistic Spiritual Sanctuary
-   Integrated Full Copy & Structure Design System
+   Strict 4-Color Consolidated Design System
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 /* ==========================================================================
-   COLOR PALETTE — NATURAL EARTH TONES
+   FINAL 4-COLOR SYSTEM
    ========================================================================== */
 :root {
-  /* Organic Backgrounds */
-  --c-bg-linen:      #F5F2EC; /* Natural Unbleached Linen */
-  --c-bg-stone:      #EBE5DA; /* Warm Sandstone */
-  --c-bg-card:       #FCFAF6; /* Earthy Ivory Card */
+  --color-ink:    #3B2352;  /* Deep Aubergine — dark text, footer, nav bg, dark panels */
+  --color-accent: #7B5A9E;  /* Muted Amethyst — icon strokes, links, secondary accents */
+  --color-gold:   #C9A24B;  /* Antique Gold — CTAs, dividers, highlights, icon fills */
+  --color-paper:  #FBF7F0;  /* Warm Ivory — all light backgrounds, cards, button text */
 
-  /* Text Colors */
-  --c-text-main:     #24201D; /* Deep Warm Earth Charcoal */
-  --c-text-body:     #574E45; /* Soft Weathered Clay */
-  --c-text-muted:    #85786C; /* Subdued Slate */
-  --c-text-light:    #F5F2EC;
+  /* Derived Opacities using exact RGBs (59,35,82 / 123,90,158 / 201,162,75 / 251,247,240) */
+  --ink-90:  rgba(59, 35, 82, 0.9);
+  --ink-80:  rgba(59, 35, 82, 0.8);
+  --ink-70:  rgba(59, 35, 82, 0.7);
+  --ink-50:  rgba(59, 35, 82, 0.5);
+  --ink-30:  rgba(59, 35, 82, 0.3);
+  --ink-20:  rgba(59, 35, 82, 0.2);
+  --ink-12:  rgba(59, 35, 82, 0.12);
+  --ink-08:  rgba(59, 35, 82, 0.08);
+  --ink-05:  rgba(59, 35, 82, 0.05);
 
-  /* Earth Bronze & Straw Gold */
-  --c-earth-bronze:  #84613D; /* Earthy Bronze */
-  --c-earth-ochre:   #96724E; /* Sienna Ochre */
-  --c-earth-muted:   #C2A478; /* Soft Straw Gold */
-  
-  --c-earth-20:      rgba(132, 97, 61, 0.2);
-  --c-earth-12:      rgba(132, 97, 61, 0.12);
-  --c-earth-08:      rgba(132, 97, 61, 0.08);
+  --accent-40: rgba(123, 90, 158, 0.4);
+  --accent-20: rgba(123, 90, 158, 0.2);
+  --accent-12: rgba(123, 90, 158, 0.12);
 
-  /* Trending Luxury Typography System */
+  --gold-50: rgba(201, 162, 75, 0.5);
+  --gold-40: rgba(201, 162, 75, 0.4);
+  --gold-20: rgba(201, 162, 75, 0.2);
+  --gold-10: rgba(201, 162, 75, 0.1);
+  --gold-08: rgba(201, 162, 75, 0.08);
+
+  --paper-95: rgba(251, 247, 240, 0.95);
+  --paper-80: rgba(251, 247, 240, 0.8);
+  --paper-50: rgba(251, 247, 240, 0.5);
+
+  /* Typography System */
   --font-display-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
   --font-display: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Optimized Section Dimensions & Rhythm */
+  /* Dimensions */
   --pad-section: clamp(100px, 11vw, 160px);
   --container-width: 1420px;
   --transition-natural: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -53,8 +62,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   overflow-x: hidden;
 }
 
@@ -62,26 +71,26 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.65;
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   cursor: default;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--c-earth-ochre);
-  color: var(--c-bg-linen);
+  background: var(--color-gold);
+  color: var(--color-paper);
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--c-bg-linen);
+  background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--c-earth-ochre);
+  background: var(--color-gold);
   border-radius: 3px;
 }
 
@@ -114,7 +123,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
   margin-bottom: 1.2rem;
 }
 
@@ -134,6 +143,55 @@ button {
 .delay-4 { transition-delay: 0.4s; }
 
 /* ==========================================================================
+   BUTTON SYSTEM (Standardized across whole site)
+   - Primary: bg var(--color-gold), text var(--color-ink), hover: filter brightness(0.9)
+   - Secondary: transparent bg, border var(--color-ink) 1px, text var(--color-ink), hover: bg var(--ink-05)
+   ========================================================================== */
+.btn-primary, .btn-hero-innovative, .footer-sub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.1rem 2.5rem;
+  background: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  border-radius: 2px;
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--transition-natural);
+}
+
+.btn-primary:hover, .btn-hero-innovative:hover, .footer-sub-btn:hover {
+  filter: brightness(0.9);
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.btn-secondary, .btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.1rem 2.2rem;
+  background: transparent;
+  border: 1px solid var(--color-ink);
+  border-radius: 2px;
+  color: var(--color-ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--transition-natural);
+}
+
+.btn-secondary:hover, .btn-hero-outline:hover {
+  background: var(--ink-05);
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+/* ==========================================================================
    1. NAVBAR
    ========================================================================== */
 .site-nav {
@@ -142,16 +200,16 @@ button {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(245, 242, 236, 0.9);
+  background: var(--paper-95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--c-earth-20);
+  border-bottom: 1px solid var(--ink-12);
   transition: all 0.4s var(--transition-natural);
 }
 
 .site-nav.scrolled {
-  background: rgba(245, 242, 236, 0.98);
-  box-shadow: 0 4px 20px rgba(36, 32, 29, 0.05);
+  background: var(--color-paper);
+  box-shadow: 0 4px 20px var(--ink-08);
 }
 
 .nav-container {
@@ -159,8 +217,8 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 86px;
-  padding: 0 3.5rem;
-  max-width: 1450px;
+  padding: 0 4rem;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -199,16 +257,16 @@ button {
   font-family: var(--font-display);
   font-size: 0.92rem;
   letter-spacing: 0.12em;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-brand-sub {
   font-family: var(--font-display-serif);
   font-size: 0.72rem;
   font-style: italic;
-  color: var(--c-earth-bronze);
+  color: var(--color-accent);
   letter-spacing: 0.05em;
 }
 
@@ -221,17 +279,17 @@ button {
 
 .nav-link {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--c-text-body);
+  color: var(--color-ink);
   position: relative;
   padding-bottom: 4px;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
 }
 
 .nav-link::after {
@@ -240,8 +298,8 @@ button {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 1px;
-  background: var(--c-earth-bronze);
+  height: 1.5px;
+  background: var(--color-gold);
   transition: width 0.3s ease;
 }
 
@@ -254,31 +312,26 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.5rem;
-  border: 1px solid var(--c-earth-bronze);
-  color: var(--c-text-main);
+  border: 1px solid var(--color-gold);
+  color: var(--color-ink);
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  background: var(--c-bg-card);
+  background: var(--color-gold);
   transition: all 0.35s ease;
 }
 
 .btn-user-icon {
   width: 14px;
   height: 14px;
-  stroke: var(--c-earth-bronze);
+  stroke: var(--color-ink);
   fill: none;
   stroke-width: 1.8;
 }
 
 .btn-ghost-gold:hover {
-  background: var(--c-earth-bronze);
-  color: var(--c-bg-linen);
-}
-
-.btn-ghost-gold:hover .btn-user-icon {
-  stroke: var(--c-bg-linen);
+  filter: brightness(0.9);
 }
 
 /* ==========================================================================
@@ -287,14 +340,14 @@ button {
 .hero-section {
   position: relative;
   height: 100vh;
-  min-height: 720px;
+  min-height: 820px;
   display: flex;
   align-items: flex-end;
-  background: var(--c-bg-linen);
+  background: var(--color-paper);
   overflow: hidden;
 }
 
-.hero-bg-video {
+.hero-bg-video, .hero-bg-image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -305,22 +358,11 @@ button {
   z-index: 1;
 }
 
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  filter: none;
-  z-index: 0;
-}
-
 .hero-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(36, 32, 29, 0.48) 0%, rgba(36, 32, 29, 0.1) 50%, transparent 100%),
-              linear-gradient(to top, rgba(36, 32, 29, 0.58) 0%, transparent 25%);
+  background: linear-gradient(to right, var(--paper-95) 0%, rgba(251, 247, 240, 0.4) 50%, transparent 100%),
+              linear-gradient(to top, var(--color-paper) 0%, transparent 25%);
   pointer-events: none;
   z-index: 2;
 }
@@ -328,11 +370,10 @@ button {
 .hero-content {
   position: relative;
   z-index: 5;
-  padding: 0 3.5rem 6.5rem 3.5rem;
+  padding: 0 4rem 7.5rem 4rem;
   max-width: 900px;
 }
 
-/* Stacked 3-Line Title Block matching user reference image */
 .hero-brand-emblem {
   display: flex;
   flex-direction: column;
@@ -344,42 +385,36 @@ button {
 .hero-brand-emblem .emblem-line {
   display: block;
   font-size: clamp(2.4rem, 4.8vw, 4.8rem);
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.hero-brand-emblem .line-1 {
-  color: #FAF8F5;
-  text-shadow: 0 2px 14px rgba(24, 20, 17, 0.7);
+.hero-brand-emblem .line-1, .hero-brand-emblem .line-3 {
+  color: var(--color-ink);
 }
 
+/* 2-Stop Gradient for DHYANA: Ink -> Gold */
 .hero-brand-emblem .line-2 {
-  color: #E8D5A3;
-  text-shadow: 0 2px 14px rgba(24, 20, 17, 0.7);
-}
-
-.hero-brand-emblem .line-3 {
-  color: #FAF8F5;
-  text-shadow: 0 2px 14px rgba(24, 20, 17, 0.7);
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-tagline-script {
   font-family: var(--font-display-serif);
   font-size: 1.5rem;
   font-style: italic;
-  color: #E8D5A3;
+  color: var(--color-gold);
   margin-bottom: 1.2rem;
-  text-shadow: 0 2px 10px rgba(24, 20, 17, 0.7);
 }
 
 .hero-subtext-body {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   line-height: 1.7;
-  color: #F5F2EC;
+  color: var(--ink-80);
   max-width: 620px;
   margin-bottom: 2.2rem;
-  text-shadow: 0 2px 10px rgba(24, 20, 17, 0.7);
 }
 
 .hero-cta-wrap {
@@ -388,80 +423,22 @@ button {
   gap: 1.4rem;
 }
 
-/* Primary Button (BEGIN YOUR JOURNEY) */
-.btn-hero-innovative {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1.15rem 2.6rem;
-  background: var(--c-bg-card);
-  border: 1px solid var(--c-earth-muted);
-  border-radius: 2px;
-  color: var(--c-text-main);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(24, 20, 17, 0.15);
-  transition: all 0.35s var(--transition-natural);
-}
-
 .btn-lotus-icon {
   width: 18px;
   height: 18px;
-  stroke: var(--c-earth-bronze);
+  stroke: var(--color-ink);
   fill: none;
   stroke-width: 1.4;
-  transition: stroke 0.35s ease;
-}
-
-.btn-hero-innovative:hover {
-  background: var(--c-earth-bronze);
-  border-color: var(--c-earth-bronze);
-  color: var(--c-bg-linen);
-}
-
-.btn-hero-innovative:hover .btn-lotus-icon {
-  stroke: var(--c-bg-linen);
-}
-
-/* Secondary Button (WATCH VIDEO) */
-.btn-hero-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 1.15rem 2.2rem;
-  background: rgba(36, 32, 29, 0.4);
-  border: 1px solid rgba(245, 242, 236, 0.4);
-  backdrop-filter: blur(8px);
-  border-radius: 2px;
-  color: #F5F2EC;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  transition: all 0.35s ease;
 }
 
 .btn-play-icon {
   width: 14px;
   height: 14px;
-  stroke: #E8D5A3;
+  stroke: var(--color-ink);
   fill: none;
   stroke-width: 1.5;
 }
 
-.btn-hero-outline:hover {
-  background: var(--c-bg-card);
-  color: var(--c-text-main);
-  border-color: var(--c-bg-card);
-}
-
-.btn-hero-outline:hover .btn-play-icon {
-  stroke: var(--c-text-main);
-}
-
-/* Guru Sarkar Badge in Hero Section */
 .hero-teacher-badge {
   position: absolute;
   right: 18vw;
@@ -471,10 +448,9 @@ button {
   align-items: center;
   gap: 0.6rem;
   padding: 0.5rem 1rem;
-  background: rgba(36, 32, 29, 0.45);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(232, 213, 163, 0.3);
-  color: #E8D5A3;
+  background: var(--paper-95);
+  border: 1px solid var(--gold-40);
+  color: var(--color-gold);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -485,13 +461,13 @@ button {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #E8D5A3;
+  background: var(--color-gold);
 }
 
-/* Side-Rail Social Links */
+/* Social Icon Rail (hero rail + footer: exact var(--color-ink) circle, var(--color-paper) icon) */
 .hero-social-rail {
   position: absolute;
-  right: 3.5rem;
+  right: 4rem;
   bottom: 7.5rem;
   z-index: 5;
   display: flex;
@@ -503,32 +479,24 @@ button {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid rgba(245, 242, 236, 0.3);
-  background: rgba(36, 32, 29, 0.35);
-  backdrop-filter: blur(8px);
+  background: var(--color-ink);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--c-bg-linen);
+  color: var(--color-paper);
   transition: all 0.3s ease;
 }
 
 .social-circle-icon svg {
   width: 16px;
   height: 16px;
-  stroke: var(--c-bg-linen);
+  stroke: var(--color-paper);
   fill: none;
-  stroke-width: 1.3;
+  stroke-width: 1.4;
 }
 
 .social-circle-icon:hover {
-  border-color: var(--c-earth-muted);
-  background: var(--c-bg-card);
-  color: var(--c-text-main);
-}
-
-.social-circle-icon:hover svg {
-  stroke: var(--c-text-main);
+  filter: brightness(1.2);
 }
 
 .hero-scroll-cue {
@@ -542,7 +510,7 @@ button {
 .scroll-line-anim {
   width: 1px;
   height: 44px;
-  background: rgba(245, 242, 236, 0.3);
+  background: var(--ink-20);
   position: relative;
   overflow: hidden;
 }
@@ -554,7 +522,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--c-bg-linen);
+  background: var(--color-gold);
   animation: scroll-drip 2s infinite;
 }
 
@@ -567,10 +535,13 @@ button {
    3. PHILOSOPHY MANIFESTO
    ========================================================================== */
 .philosophy-section {
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
   position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
 }
 
 .philosophy-manifesto-text {
@@ -580,7 +551,7 @@ button {
   font-style: italic;
   line-height: 1.65;
   text-align: center;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   max-width: 960px;
   margin: 0 auto;
 }
@@ -589,9 +560,10 @@ button {
    4. THE JOURNEY WITHIN (BENEFITS / 5 PILLARS)
    ========================================================================== */
 .practice-section {
-  background-color: var(--c-bg-stone);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
+  min-height: 720px;
 }
 
 .practice-header-centered {
@@ -606,9 +578,9 @@ button {
 .practice-title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 4.2vw, 3.8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 1rem;
 }
 
@@ -622,7 +594,7 @@ button {
 .divider-line {
   width: 48px;
   height: 1px;
-  background: var(--c-earth-bronze);
+  background: var(--color-gold);
   opacity: 0.4;
 }
 
@@ -630,17 +602,16 @@ button {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--c-earth-bronze);
+  background: var(--color-gold);
 }
 
 .practice-subtitle {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--c-text-body);
+  color: var(--ink-70);
   font-weight: 400;
 }
 
-/* 5-Column Centered Luxury Grid */
 .practice-cards-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -648,9 +619,10 @@ button {
   align-items: stretch;
 }
 
+/* Card Panel Background: var(--color-ink) at 5% opacity over paper */
 .practice-card-lux {
-  background: var(--c-bg-card);
-  border: 1px solid var(--c-earth-20);
+  background: var(--ink-05);
+  border: 1px solid var(--ink-12);
   border-radius: 4px;
   padding: 2.4rem 1.6rem 2rem 1.6rem;
   display: flex;
@@ -659,13 +631,11 @@ button {
   text-align: center;
   position: relative;
   transition: all 0.4s var(--transition-natural);
-  box-shadow: 0 4px 15px rgba(36, 32, 29, 0.03);
 }
 
 .practice-card-lux:hover {
   transform: translateY(-8px);
-  border-color: var(--c-earth-bronze);
-  box-shadow: 0 12px 30px rgba(132, 97, 61, 0.12);
+  border-color: var(--color-gold);
 }
 
 .practice-card-num-badge {
@@ -673,20 +643,21 @@ button {
   font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: var(--c-earth-bronze);
-  background: rgba(132, 97, 61, 0.08);
-  border: 1px solid rgba(132, 97, 61, 0.2);
+  color: var(--color-gold);
+  background: var(--gold-10);
+  border: 1px solid var(--gold-20);
   padding: 0.2rem 0.75rem;
   border-radius: 20px;
   margin-bottom: 1.6rem;
 }
 
+/* Icon circles background: var(--color-accent) at 12% opacity */
 .practice-card-icon-wrap {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--c-bg-linen);
-  border: 1px solid var(--c-earth-20);
+  background: var(--accent-12);
+  border: 1px solid var(--accent-20);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -695,47 +666,54 @@ button {
 }
 
 .practice-card-lux:hover .practice-card-icon-wrap {
-  background: var(--c-earth-bronze);
-  border-color: var(--c-earth-bronze);
+  background: var(--color-accent);
 }
 
+/* Icon strokes: var(--color-accent) */
 .practice-svg {
   width: 26px;
   height: 26px;
-  stroke: var(--c-earth-bronze);
+  stroke: var(--color-accent);
   transition: stroke 0.35s ease;
 }
 
+.practice-svg path {
+  fill: var(--color-accent);
+}
+
 .practice-card-lux:hover .practice-svg {
-  stroke: var(--c-bg-linen);
+  stroke: var(--color-paper);
 }
 
 .practice-card-lux:hover .practice-svg path {
-  fill: var(--c-bg-linen);
+  fill: var(--color-paper);
 }
 
+/* Icon labels: var(--color-ink) */
 .practice-card-title {
   font-family: var(--font-display);
   font-size: 1.12rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 0.8rem;
 }
 
+/* Body copy: var(--color-ink) at 70% opacity */
 .practice-card-desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--c-text-body);
+  color: var(--ink-70);
 }
 
 /* ==========================================================================
    5. THE TEACHER — GURU SARKAR
    ========================================================================== */
 .teacher-section {
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
+  min-height: 760px;
   position: relative;
 }
 
@@ -749,14 +727,14 @@ button {
 .teacher-image-wrapper {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--c-earth-20);
+  border: 1px solid var(--ink-12);
   border-radius: 2px;
-  box-shadow: 0 10px 30px rgba(36, 32, 29, 0.08);
+  box-shadow: 0 10px 30px var(--ink-08);
 }
 
 .teacher-image-wrapper img {
   width: 100%;
-  height: 620px;
+  height: 580px;
   object-fit: cover;
   object-position: center 25%;
   filter: none;
@@ -770,9 +748,9 @@ button {
 .teacher-title {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 4.5vw, 4.4rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.05;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 0.5rem;
 }
 
@@ -780,20 +758,20 @@ button {
   font-size: 0.78rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
   margin-bottom: 2.2rem;
 }
 
 .teacher-bio {
   font-size: 1.02rem;
   line-height: 1.8;
-  color: var(--c-text-body);
+  color: var(--ink-70);
   margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
 .teacher-pullquote {
-  border-left: 2px solid var(--c-earth-bronze);
+  border-left: 2px solid var(--color-gold);
   padding-left: 1.8rem;
   margin-bottom: 2.5rem;
 }
@@ -803,7 +781,7 @@ button {
   font-size: 1.45rem;
   font-style: italic;
   line-height: 1.5;
-  color: var(--c-text-main);
+  color: var(--color-ink);
 }
 
 .teacher-credentials-list {
@@ -818,23 +796,24 @@ button {
   align-items: center;
   gap: 1rem;
   font-size: 0.88rem;
-  color: var(--c-text-body);
+  color: var(--ink-70);
 }
 
 .credential-bullet {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--c-earth-bronze);
+  background: var(--color-gold);
 }
 
 /* ==========================================================================
    6. OUR GUIDING PRINCIPLES
    ========================================================================== */
 .principles-section {
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
+  min-height: 640px;
 }
 
 .principles-header {
@@ -844,8 +823,8 @@ button {
 .principles-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.6rem);
-  font-weight: 300;
-  color: var(--c-text-main);
+  font-weight: 400;
+  color: var(--color-ink);
 }
 
 .principles-timeline-container {
@@ -859,7 +838,7 @@ button {
   left: 0;
   width: 100%;
   height: 1px;
-  background: var(--c-earth-20);
+  background: var(--ink-12);
 }
 
 .principles-timeline-grid {
@@ -872,8 +851,8 @@ button {
 .principle-numeral {
   font-family: var(--font-display);
   font-size: 1.2rem;
-  font-weight: 300;
-  color: var(--c-earth-bronze);
+  font-weight: 600;
+  color: var(--color-gold);
   margin-bottom: 1rem;
   display: block;
 }
@@ -881,16 +860,16 @@ button {
 .principle-name {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 0.7rem;
 }
 
 .principle-desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--c-text-body);
+  color: var(--ink-70);
   font-weight: 400;
 }
 
@@ -898,9 +877,10 @@ button {
    7. SANCTUARY GROUNDS
    ========================================================================== */
 .sanctuary-section {
-  background-color: var(--c-bg-stone);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
+  min-height: 800px;
 }
 
 .sanctuary-header {
@@ -910,8 +890,8 @@ button {
 .sanctuary-title {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.6rem);
-  font-weight: 300;
-  color: var(--c-text-main);
+  font-weight: 400;
+  color: var(--color-ink);
 }
 
 .sanctuary-gallery-grid {
@@ -945,12 +925,12 @@ button {
   bottom: 1.2rem;
   left: 1.2rem;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--c-text-main);
-  background: rgba(245, 242, 236, 0.92);
-  border: 1px solid var(--c-earth-20);
+  color: var(--color-ink);
+  background: var(--paper-95);
+  border: 1px solid var(--ink-12);
   padding: 0.4rem 0.9rem;
 }
 
@@ -961,15 +941,22 @@ button {
 }
 
 /* ==========================================================================
-   8. SIGNATURE QUOTE BANNER
+   8. TESTIMONIAL / SIGNATURE QUOTE BANNER
+   - Overlay gradient: var(--color-ink) at 55% opacity / ink 5%
+   - Quote text: var(--color-ink)
+   - Attribution: var(--color-gold)
+   - Mandala watermark: var(--color-gold) at 10% opacity
    ========================================================================== */
 .quote-section {
   position: relative;
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
-  padding: clamp(110px, 12vw, 200px) 0;
+  background-color: var(--ink-05);
+  color: var(--color-ink);
+  padding: clamp(110px, 12vw, 180px) 0;
   text-align: center;
   overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
 }
 
 .quote-mandala-watermark {
@@ -979,7 +966,7 @@ button {
   transform: translate(-50%, -50%);
   width: min(780px, 90vw);
   height: min(780px, 90vw);
-  opacity: 0.12;
+  opacity: 0.10; /* var(--color-gold) at 10% opacity */
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -991,7 +978,6 @@ button {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(132, 97, 61, 0.2));
 }
 
 .quote-content {
@@ -1004,28 +990,29 @@ button {
 .quote-text {
   font-family: var(--font-display-serif);
   font-size: clamp(2rem, 3.2vw, 3.2rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   line-height: 1.45;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 2.5rem;
 }
 
 .quote-attribution {
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
 }
 
 /* ==========================================================================
-   9. JOIN OUR COMMUNITY / ENQUIRY FORM
+   9. JOIN OUR COMMUNITY / NEWSLETTER / ENQUIRY
    ========================================================================== */
 .enquiry-section {
-  background-color: var(--c-bg-linen);
-  color: var(--c-text-main);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   padding: var(--pad-section) 0;
+  min-height: 680px;
 }
 
 .enquiry-grid {
@@ -1038,16 +1025,16 @@ button {
 .enquiry-title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 4.2vw, 3.8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.08;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   margin-bottom: 1.5rem;
 }
 
 .enquiry-desc {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--c-text-body);
+  color: var(--ink-70);
   font-weight: 400;
   margin-bottom: 2.5rem;
 }
@@ -1065,20 +1052,21 @@ button {
 .form-field-label {
   display: block;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
   margin-bottom: 0.5rem;
 }
 
+/* Input field: var(--color-paper) bg, var(--color-ink) at 30% opacity border */
 .form-underline-input {
   width: 100%;
-  background: transparent;
+  background: var(--color-paper);
   border: none;
-  border-bottom: 1.5px solid var(--c-earth-20);
+  border-bottom: 1.5px solid var(--ink-30);
   padding: 0.75rem 0;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: 1rem;
   outline: none;
@@ -1086,7 +1074,7 @@ button {
 }
 
 .form-underline-input:focus {
-  border-bottom-color: var(--c-earth-bronze);
+  border-bottom-color: var(--color-gold);
 }
 
 .form-row-grid {
@@ -1096,14 +1084,18 @@ button {
 }
 
 /* ==========================================================================
-   10. FOOTER & SUBSCRIBE BAR
+   10. FOOTER
+   - Background: var(--color-ink) (#3B2352)
+   - Text/links: var(--color-paper) at 80% opacity
+   - Copyright: var(--color-paper) at 50% opacity
+   - Divider line: var(--color-gold) at 40% opacity
    ========================================================================== */
 .site-footer {
-  background-color: var(--c-bg-stone);
-  color: var(--c-text-main);
-  padding-top: 4.5rem;
+  background-color: var(--color-ink);
+  color: var(--paper-80);
+  padding-top: 5.5rem;
   padding-bottom: 2.8rem;
-  border-top: 1px solid var(--c-earth-20);
+  border-top: 1px solid var(--gold-40);
 }
 
 .footer-3col-grid {
@@ -1116,19 +1108,19 @@ button {
 .footer-brand-title {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  color: var(--c-text-main);
+  color: var(--color-paper);
   margin-bottom: 0.9rem;
+  letter-spacing: 0.08em;
 }
 
 .footer-brand-desc {
   font-size: 0.88rem;
   line-height: 1.7;
-  color: var(--c-text-body);
+  color: var(--paper-80);
   margin-bottom: 1.5rem;
   font-weight: 400;
 }
 
-/* Subscription Form in Footer */
 .footer-subscribe-form {
   display: flex;
   align-items: center;
@@ -1138,41 +1130,21 @@ button {
 .footer-email-input {
   flex: 1;
   padding: 0.75rem 1rem;
-  background: var(--c-bg-card);
-  border: 1px solid var(--c-earth-20);
+  background: var(--color-paper);
+  border: 1px solid var(--ink-30);
   border-right: none;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--c-text-main);
+  color: var(--color-ink);
   outline: none;
-}
-
-.footer-sub-btn {
-  padding: 0.75rem 1.4rem;
-  background: var(--c-earth-bronze);
-  color: var(--c-bg-linen);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: background 0.3s ease;
-}
-
-.footer-sub-btn:hover {
-  background: var(--c-text-main);
-}
-
-.footer-social-rail {
-  display: flex;
-  gap: 0.9rem;
 }
 
 .footer-col-title {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
   margin-bottom: 1.6rem;
 }
 
@@ -1185,22 +1157,22 @@ button {
 
 .footer-links-list a {
   font-size: 0.88rem;
-  color: var(--c-text-body);
+  color: var(--paper-80);
   transition: color 0.3s ease;
 }
 
 .footer-links-list a:hover {
-  color: var(--c-earth-bronze);
+  color: var(--color-gold);
 }
 
 .footer-bottom-row {
-  border-top: 1px solid var(--c-earth-20);
+  border-top: 1px solid var(--gold-40);
   padding-top: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.78rem;
-  color: var(--c-text-muted);
+  color: var(--paper-50);
 }
 
 /* ==========================================================================
