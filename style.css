@@ -1,43 +1,36 @@
 /* ==========================================================================
    KUMBHAKA DHYĀNA ĀŚRAMAM
-   Refined Lighter Shade Design System
+   Royal Aubergine & Deep Purple Dark Design System
+   (Strictly mapped from User Color Spec: #241533, #3B2352, #4A2A6B, #5A3B7A, #7B5A9E, #8B6FA0, #C9A24B)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 /* ==========================================================================
-   LIGHTER SHADE 4-COLOR PALETTE
+   USER-SPECIFIED COLOR SYSTEM
    ========================================================================== */
 :root {
-  --color-ink:    #2B193D;  /* Deep Aubergine — crisp headers, legibility & footer */
-  --color-accent: #8E6EB3;  /* Lighter Soft Amethyst — icons, badges & links */
-  --color-gold:   #D1A948;  /* Luminous Champagne Gold — CTAs, dividers & highlights */
-  --color-paper:  #FDFBF7;  /* Ultra-Luminous Pearl Ivory — airy light background */
+  --color-near-black:    #241533;  /* Main Page & Section Background */
+  --color-aubergine:     #3B2352;  /* Cards, Panels, Navbar Background */
+  --color-deep-violet:   #4A2A6B;  /* Quote Banner & Special Banner Overlay */
+  --color-royal-purple:  #5A3B7A;  /* Card Hover Backgrounds & Accents */
+  --color-medium-purple: #7B5A9E;  /* Icon Wrap Circles & Primary Accents */
+  --color-mauve:         #8B6FA0;  /* Secondary Subtitles & Muted Accents */
+  --color-gold:          #C9A24B;  /* Antique Gold — CTAs, Dividers, Badges & Highlights */
+  --color-text-light:    #FAF6EE;  /* High-Contrast Crisp Ivory Text */
 
-  /* Derived Opacity Tokens using exact RGBs (43,25,61 / 142,110,179 / 209,169,72 / 253,251,247) */
-  --ink-90:  rgba(43, 25, 61, 0.9);
-  --ink-80:  rgba(43, 25, 61, 0.8);
-  --ink-70:  rgba(43, 25, 61, 0.7);
-  --ink-50:  rgba(43, 25, 61, 0.5);
-  --ink-30:  rgba(43, 25, 61, 0.3);
-  --ink-20:  rgba(43, 25, 61, 0.2);
-  --ink-12:  rgba(43, 25, 61, 0.12);
-  --ink-08:  rgba(43, 25, 61, 0.08);
-  --ink-05:  rgba(43, 25, 61, 0.03); /* Lighter 3% panel tint */
+  /* Opacity Variations */
+  --gold-50:  rgba(201, 162, 75, 0.5);
+  --gold-30:  rgba(201, 162, 75, 0.3);
+  --gold-20:  rgba(201, 162, 75, 0.2);
+  --gold-10:  rgba(201, 162, 75, 0.1);
 
-  --accent-40: rgba(142, 110, 179, 0.4);
-  --accent-20: rgba(142, 110, 179, 0.2);
-  --accent-12: rgba(142, 110, 179, 0.12);
+  --text-90:  rgba(250, 246, 238, 0.9);
+  --text-75:  rgba(250, 246, 238, 0.75);
+  --text-50:  rgba(250, 246, 238, 0.5);
 
-  --gold-50: rgba(209, 169, 72, 0.5);
-  --gold-40: rgba(209, 169, 72, 0.4);
-  --gold-20: rgba(209, 169, 72, 0.2);
-  --gold-10: rgba(209, 169, 72, 0.1);
-  --gold-08: rgba(209, 169, 72, 0.08);
-
-  --paper-95: rgba(253, 251, 247, 0.95);
-  --paper-80: rgba(253, 251, 247, 0.8);
-  --paper-50: rgba(253, 251, 247, 0.5);
+  --purple-20: rgba(123, 90, 158, 0.2);
+  --purple-12: rgba(123, 90, 158, 0.12);
 
   /* Typography System */
   --font-display-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
@@ -51,7 +44,7 @@
 }
 
 /* ==========================================================================
-   BASE RESET
+   BASE RESET & DARK BACKGROUND CONSOLIDATION
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -62,8 +55,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   overflow-x: hidden;
 }
 
@@ -71,8 +64,8 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.65;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   cursor: default;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -80,14 +73,14 @@ body {
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-paper);
+  color: var(--color-near-black);
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-paper);
+  background: var(--color-near-black);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold);
@@ -143,11 +136,11 @@ button {
 .delay-4 { transition-delay: 0.4s; }
 
 /* ==========================================================================
-   BUTTON SYSTEM (Standardized across whole site)
-   - Primary: bg var(--color-gold), text var(--color-ink), hover: filter brightness(0.9)
-   - Secondary: transparent bg, border var(--color-ink) 1px, text var(--color-ink), hover: bg var(--ink-05)
+   BUTTON SYSTEM
+   - Primary: bg var(--color-gold), text var(--color-near-black)
+   - Secondary: transparent bg, border var(--color-gold) 1px, text var(--color-gold)
    ========================================================================== */
-.btn-primary, .btn-hero-innovative, .footer-sub-btn {
+.btn-primary, .btn-hero-innovative, .footer-sub-btn, .btn-ghost-gold {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
@@ -155,7 +148,7 @@ button {
   background: var(--color-gold);
   border: 1px solid var(--color-gold);
   border-radius: 2px;
-  color: var(--color-ink);
+  color: var(--color-near-black);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -163,10 +156,9 @@ button {
   transition: all 0.3s var(--transition-natural);
 }
 
-.btn-primary:hover, .btn-hero-innovative:hover, .footer-sub-btn:hover {
-  filter: brightness(0.9);
-  background: var(--color-gold);
-  color: var(--color-ink);
+.btn-primary:hover, .btn-hero-innovative:hover, .footer-sub-btn:hover, .btn-ghost-gold:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 20px rgba(201, 162, 75, 0.4);
 }
 
 .btn-secondary, .btn-hero-outline {
@@ -175,9 +167,9 @@ button {
   gap: 0.7rem;
   padding: 1.1rem 2.2rem;
   background: transparent;
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-gold);
   border-radius: 2px;
-  color: var(--color-ink);
+  color: var(--color-gold);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.2em;
@@ -186,9 +178,9 @@ button {
 }
 
 .btn-secondary:hover, .btn-hero-outline:hover {
-  background: var(--ink-05);
-  color: var(--color-ink);
-  border-color: var(--color-ink);
+  background: rgba(201, 162, 75, 0.12);
+  color: var(--color-text-light);
+  border-color: var(--color-gold);
 }
 
 /* ==========================================================================
@@ -200,16 +192,16 @@ button {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: var(--paper-95);
+  background: rgba(36, 21, 51, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--ink-12);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.2);
   transition: all 0.4s var(--transition-natural);
 }
 
 .site-nav.scrolled {
-  background: var(--color-paper);
-  box-shadow: 0 4px 20px var(--ink-08);
+  background: var(--color-near-black);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -257,7 +249,7 @@ button {
   font-family: var(--font-display);
   font-size: 0.92rem;
   letter-spacing: 0.12em;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -266,7 +258,7 @@ button {
   font-family: var(--font-display-serif);
   font-size: 0.72rem;
   font-style: italic;
-  color: var(--color-accent);
+  color: var(--color-gold);
   letter-spacing: 0.05em;
 }
 
@@ -282,7 +274,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   position: relative;
   padding-bottom: 4px;
   transition: color 0.3s ease;
@@ -307,31 +299,12 @@ button {
   width: 100%;
 }
 
-.btn-ghost-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.5rem;
-  border: 1px solid var(--color-gold);
-  color: var(--color-ink);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  background: var(--color-gold);
-  transition: all 0.35s ease;
-}
-
 .btn-user-icon {
   width: 14px;
   height: 14px;
-  stroke: var(--color-ink);
+  stroke: var(--color-near-black);
   fill: none;
   stroke-width: 1.8;
-}
-
-.btn-ghost-gold:hover {
-  filter: brightness(0.9);
 }
 
 /* ==========================================================================
@@ -343,7 +316,7 @@ button {
   min-height: 820px;
   display: flex;
   align-items: flex-end;
-  background: var(--color-paper);
+  background: var(--color-near-black);
   overflow: hidden;
 }
 
@@ -361,8 +334,8 @@ button {
 .hero-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--paper-95) 0%, rgba(253, 251, 247, 0.4) 50%, transparent 100%),
-              linear-gradient(to top, var(--color-paper) 0%, transparent 25%);
+  background: linear-gradient(to right, rgba(36, 21, 51, 0.95) 0%, rgba(36, 21, 51, 0.6) 50%, transparent 100%),
+              linear-gradient(to top, var(--color-near-black) 0%, transparent 35%);
   pointer-events: none;
   z-index: 2;
 }
@@ -391,12 +364,11 @@ button {
 }
 
 .hero-brand-emblem .line-1, .hero-brand-emblem .line-3 {
-  color: var(--color-ink);
+  color: var(--color-text-light);
 }
 
-/* 2-Stop Gradient for DHYANA: Ink -> Gold */
 .hero-brand-emblem .line-2 {
-  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-gold) 100%);
+  background: linear-gradient(135deg, var(--color-text-light) 0%, var(--color-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -412,7 +384,7 @@ button {
 .hero-subtext-body {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--ink-80);
+  color: var(--text-90);
   max-width: 620px;
   margin-bottom: 2.2rem;
 }
@@ -426,7 +398,7 @@ button {
 .btn-lotus-icon {
   width: 18px;
   height: 18px;
-  stroke: var(--color-ink);
+  stroke: var(--color-near-black);
   fill: none;
   stroke-width: 1.4;
 }
@@ -434,7 +406,7 @@ button {
 .btn-play-icon {
   width: 14px;
   height: 14px;
-  stroke: var(--color-ink);
+  stroke: var(--color-gold);
   fill: none;
   stroke-width: 1.5;
 }
@@ -448,13 +420,14 @@ button {
   align-items: center;
   gap: 0.6rem;
   padding: 0.5rem 1rem;
-  background: var(--paper-95);
+  background: rgba(59, 35, 82, 0.85);
   border: 1px solid var(--gold-40);
   color: var(--color-gold);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
 
 .badge-lotus-dot {
@@ -464,7 +437,7 @@ button {
   background: var(--color-gold);
 }
 
-/* Social Icon Rail (hero rail + footer: exact var(--color-ink) circle, var(--color-paper) icon) */
+/* Social Icon Rail */
 .hero-social-rail {
   position: absolute;
   right: 4rem;
@@ -479,24 +452,27 @@ button {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: var(--color-ink);
+  background: var(--color-aubergine);
+  border: 1px solid var(--gold-30);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-paper);
+  color: var(--color-text-light);
   transition: all 0.3s ease;
 }
 
 .social-circle-icon svg {
   width: 16px;
   height: 16px;
-  stroke: var(--color-paper);
+  stroke: var(--color-text-light);
   fill: none;
   stroke-width: 1.4;
 }
 
 .social-circle-icon:hover {
-  filter: brightness(1.2);
+  background: var(--color-royal-purple);
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
 }
 
 .hero-scroll-cue {
@@ -510,7 +486,7 @@ button {
 .scroll-line-anim {
   width: 1px;
   height: 44px;
-  background: var(--ink-20);
+  background: rgba(201, 162, 75, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -535,8 +511,8 @@ button {
    3. PHILOSOPHY MANIFESTO
    ========================================================================== */
 .philosophy-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   position: relative;
   min-height: 480px;
@@ -551,7 +527,7 @@ button {
   font-style: italic;
   line-height: 1.65;
   text-align: center;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   max-width: 960px;
   margin: 0 auto;
 }
@@ -560,8 +536,8 @@ button {
    4. THE JOURNEY WITHIN (BENEFITS / 5 PILLARS)
    ========================================================================== */
 .practice-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   min-height: 720px;
 }
@@ -580,7 +556,7 @@ button {
   font-size: clamp(2.6rem, 4.2vw, 3.8rem);
   font-weight: 400;
   line-height: 1.1;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 1rem;
 }
 
@@ -608,7 +584,7 @@ button {
 .practice-subtitle {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--ink-70);
+  color: var(--color-mauve);
   font-weight: 400;
 }
 
@@ -619,10 +595,10 @@ button {
   align-items: stretch;
 }
 
-/* Card Panel Background: Crisp Pure White with Lighter Soft Gold/Amethyst Accent Shadow */
+/* Card Panel Background: Aubergine (#3B2352) with Gold Borders */
 .practice-card-lux {
-  background: #FFFFFF;
-  border: 1px solid var(--gold-20);
+  background: var(--color-aubergine);
+  border: 1px solid rgba(201, 162, 75, 0.25);
   border-radius: 6px;
   padding: 2.4rem 1.6rem 2rem 1.6rem;
   display: flex;
@@ -630,14 +606,15 @@ button {
   align-items: center;
   text-align: center;
   position: relative;
-  box-shadow: 0 10px 30px rgba(43, 25, 61, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.4s var(--transition-natural);
 }
 
 .practice-card-lux:hover {
   transform: translateY(-8px);
+  background: var(--color-royal-purple);
   border-color: var(--color-gold);
-  box-shadow: 0 16px 40px rgba(209, 169, 72, 0.15);
+  box-shadow: 0 16px 40px rgba(201, 162, 75, 0.25);
 }
 
 .practice-card-num-badge {
@@ -646,20 +623,20 @@ button {
   font-weight: 600;
   letter-spacing: 0.15em;
   color: var(--color-gold);
-  background: var(--gold-10);
-  border: 1px solid var(--gold-20);
+  background: rgba(201, 162, 75, 0.12);
+  border: 1px solid var(--gold-30);
   padding: 0.2rem 0.75rem;
   border-radius: 20px;
   margin-bottom: 1.6rem;
 }
 
-/* Icon circles background: var(--color-accent) at 12% opacity */
+/* Icon circles background */
 .practice-card-icon-wrap {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--accent-12);
-  border: 1px solid var(--accent-20);
+  background: var(--color-medium-purple);
+  border: 1px solid var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -668,52 +645,47 @@ button {
 }
 
 .practice-card-lux:hover .practice-card-icon-wrap {
-  background: var(--color-accent);
+  background: var(--color-gold);
 }
 
-/* Icon strokes: var(--color-accent) */
+/* Icon strokes & fills */
 .practice-svg {
   width: 26px;
   height: 26px;
-  stroke: var(--color-accent);
+  stroke: var(--color-text-light);
   transition: stroke 0.35s ease;
 }
 
 .practice-svg path {
-  fill: var(--color-accent);
-}
-
-.practice-card-lux:hover .practice-svg {
-  stroke: var(--color-paper);
+  fill: var(--color-gold);
 }
 
 .practice-card-lux:hover .practice-svg path {
-  fill: var(--color-paper);
+  fill: var(--color-near-black);
 }
 
-/* Icon labels: var(--color-ink) */
+/* Icon labels */
 .practice-card-title {
   font-family: var(--font-display);
   font-size: 1.12rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 0.8rem;
 }
 
-/* Body copy: var(--color-ink) at 70% opacity */
 .practice-card-desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--ink-70);
+  color: var(--text-75);
 }
 
 /* ==========================================================================
    5. THE TEACHER — GURU SARKAR
    ========================================================================== */
 .teacher-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   min-height: 760px;
   position: relative;
@@ -729,9 +701,9 @@ button {
 .teacher-image-wrapper {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--ink-12);
-  border-radius: 2px;
-  box-shadow: 0 10px 30px var(--ink-08);
+  border: 1px solid var(--gold-30);
+  border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .teacher-image-wrapper img {
@@ -752,7 +724,7 @@ button {
   font-size: clamp(2.8rem, 4.5vw, 4.4rem);
   font-weight: 400;
   line-height: 1.05;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 0.5rem;
 }
 
@@ -767,7 +739,7 @@ button {
 .teacher-bio {
   font-size: 1.02rem;
   line-height: 1.8;
-  color: var(--ink-70);
+  color: var(--text-75);
   margin-bottom: 2.5rem;
   font-weight: 400;
 }
@@ -783,7 +755,7 @@ button {
   font-size: 1.45rem;
   font-style: italic;
   line-height: 1.5;
-  color: var(--color-ink);
+  color: var(--color-text-light);
 }
 
 .teacher-credentials-list {
@@ -798,7 +770,7 @@ button {
   align-items: center;
   gap: 1rem;
   font-size: 0.88rem;
-  color: var(--ink-70);
+  color: var(--text-75);
 }
 
 .credential-bullet {
@@ -812,8 +784,8 @@ button {
    6. OUR GUIDING PRINCIPLES
    ========================================================================== */
 .principles-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   min-height: 640px;
 }
@@ -826,7 +798,7 @@ button {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   font-weight: 400;
-  color: var(--color-ink);
+  color: var(--color-text-light);
 }
 
 .principles-timeline-container {
@@ -840,7 +812,7 @@ button {
   left: 0;
   width: 100%;
   height: 1px;
-  background: var(--ink-12);
+  background: rgba(201, 162, 75, 0.25);
 }
 
 .principles-timeline-grid {
@@ -864,14 +836,14 @@ button {
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 0.7rem;
 }
 
 .principle-desc {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--ink-70);
+  color: var(--text-75);
   font-weight: 400;
 }
 
@@ -879,8 +851,8 @@ button {
    7. SANCTUARY GROUNDS
    ========================================================================== */
 .sanctuary-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   min-height: 800px;
 }
@@ -893,7 +865,7 @@ button {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 4vw, 3.6rem);
   font-weight: 400;
-  color: var(--color-ink);
+  color: var(--color-text-light);
 }
 
 .sanctuary-gallery-grid {
@@ -906,7 +878,8 @@ button {
 .gallery-card {
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 162, 75, 0.2);
 }
 
 .gallery-card img {
@@ -930,10 +903,11 @@ button {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-ink);
-  background: var(--paper-95);
-  border: 1px solid var(--ink-12);
+  color: var(--color-gold);
+  background: rgba(36, 21, 51, 0.9);
+  border: 1px solid var(--gold-30);
   padding: 0.4rem 0.9rem;
+  backdrop-filter: blur(8px);
 }
 
 .sanctuary-gallery-row2 {
@@ -947,8 +921,8 @@ button {
    ========================================================================== */
 .quote-section {
   position: relative;
-  background-color: var(--ink-05);
-  color: var(--color-ink);
+  background-color: var(--color-deep-violet);
+  color: var(--color-text-light);
   padding: clamp(110px, 12vw, 180px) 0;
   text-align: center;
   overflow: hidden;
@@ -964,7 +938,7 @@ button {
   transform: translate(-50%, -50%);
   width: min(780px, 90vw);
   height: min(780px, 90vw);
-  opacity: 0.10;
+  opacity: 0.15;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -991,7 +965,7 @@ button {
   font-weight: 400;
   font-style: italic;
   line-height: 1.45;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 2.5rem;
 }
 
@@ -1007,8 +981,8 @@ button {
    9. JOIN OUR COMMUNITY / NEWSLETTER / ENQUIRY
    ========================================================================== */
 .enquiry-section {
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: var(--color-near-black);
+  color: var(--color-text-light);
   padding: var(--pad-section) 0;
   min-height: 680px;
 }
@@ -1025,14 +999,14 @@ button {
   font-size: clamp(2.6rem, 4.2vw, 3.8rem);
   font-weight: 400;
   line-height: 1.08;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   margin-bottom: 1.5rem;
 }
 
 .enquiry-desc {
   font-size: 1rem;
   line-height: 1.8;
-  color: var(--ink-70);
+  color: var(--text-75);
   font-weight: 400;
   margin-bottom: 2.5rem;
 }
@@ -1041,6 +1015,11 @@ button {
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+  background: var(--color-aubergine);
+  padding: 3rem;
+  border-radius: 6px;
+  border: 1px solid var(--gold-30);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .form-field-group {
@@ -1057,14 +1036,13 @@ button {
   margin-bottom: 0.5rem;
 }
 
-/* Input field: var(--color-paper) bg, var(--color-ink) at 30% opacity border */
 .form-underline-input {
   width: 100%;
-  background: var(--color-paper);
+  background: transparent;
   border: none;
-  border-bottom: 1.5px solid var(--ink-30);
+  border-bottom: 1.5px solid rgba(201, 162, 75, 0.3);
   padding: 0.75rem 0;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   font-family: var(--font-body);
   font-size: 1rem;
   outline: none;
@@ -1085,8 +1063,8 @@ button {
    10. FOOTER
    ========================================================================== */
 .site-footer {
-  background-color: var(--color-ink);
-  color: var(--paper-80);
+  background-color: #170C21;
+  color: var(--text-75);
   padding-top: 5.5rem;
   padding-bottom: 2.8rem;
   border-top: 1px solid var(--gold-40);
@@ -1102,7 +1080,7 @@ button {
 .footer-brand-title {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  color: var(--color-paper);
+  color: var(--color-text-light);
   margin-bottom: 0.9rem;
   letter-spacing: 0.08em;
 }
@@ -1110,7 +1088,7 @@ button {
 .footer-brand-desc {
   font-size: 0.88rem;
   line-height: 1.7;
-  color: var(--paper-80);
+  color: var(--text-75);
   margin-bottom: 1.5rem;
   font-weight: 400;
 }
@@ -1124,12 +1102,12 @@ button {
 .footer-email-input {
   flex: 1;
   padding: 0.75rem 1rem;
-  background: var(--color-paper);
-  border: 1px solid var(--ink-30);
+  background: var(--color-near-black);
+  border: 1px solid var(--gold-30);
   border-right: none;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--color-ink);
+  color: var(--color-text-light);
   outline: none;
 }
 
@@ -1151,7 +1129,7 @@ button {
 
 .footer-links-list a {
   font-size: 0.88rem;
-  color: var(--paper-80);
+  color: var(--text-75);
   transition: color 0.3s ease;
 }
 
@@ -1166,7 +1144,7 @@ button {
   align-items: center;
   justify-content: space-between;
   font-size: 0.78rem;
-  color: var(--paper-50);
+  color: var(--text-50);
 }
 
 /* ==========================================================================
