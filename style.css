@@ -787,68 +787,236 @@ button {
 /* ==========================================================================
    6. OUR GUIDING PRINCIPLES
    ========================================================================== */
+/* ==========================================================================
+   6. OUR GUIDING PRINCIPLES (ARTWORK & INNOVATIVE ALIGNMENT)
+   ========================================================================== */
 .principles-section {
   background-color: var(--color-near-black);
   color: var(--color-text-light);
   padding: var(--pad-section) 0;
-  min-height: 640px;
-}
-
-.principles-header {
-  margin-bottom: 4.5rem;
-}
-
-.principles-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.6rem);
-  font-weight: 400;
-  color: var(--color-text-light);
-}
-
-.principles-timeline-container {
   position: relative;
-  padding-top: 2.5rem;
+  overflow: hidden;
 }
 
-.principles-timeline-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: rgba(201, 162, 75, 0.25);
-}
-
-.principles-timeline-grid {
+.principles-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2.2rem;
-  list-style: none;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4.5rem;
+  align-items: center;
 }
 
-.principle-numeral {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-gold);
-  margin-bottom: 1rem;
+/* --- Left Column: Guru Sketch Artwork & Mandala Halo --- */
+.principles-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principles-artwork-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Subtle Mandala Halo Backdrop */
+.principles-mandala-halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125%;
+  height: 125%;
+  pointer-events: none;
+  opacity: 0.18;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.principles-mandala-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(201, 162, 75, 0.4)) invert(0.85) sepia(1) saturate(5);
+  animation: slowMandalaSpin 120s linear infinite;
+}
+
+@keyframes slowMandalaSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Guru Portrait Sketch Card Container */
+.principles-portrait-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-aubergine);
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 
+              0 0 35px rgba(201, 162, 75, 0.35);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.principles-portrait-wrap:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.9), 
+              0 0 45px rgba(201, 162, 75, 0.55);
+}
+
+.principles-guru-sketch {
+  width: 100%;
+  height: auto;
   display: block;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.98);
+}
+
+.principles-portrait-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(36, 21, 51, 0.96) 0%, rgba(36, 21, 51, 0.75) 70%, transparent 100%);
+  padding: 1.8rem 1.5rem 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgba(201, 162, 75, 0.3);
+}
+
+.principles-portrait-badge .badge-title {
+  font-family: var(--font-display-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+}
+
+.principles-portrait-badge .badge-sub {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-mauve);
+  margin-top: 0.2rem;
+}
+
+/* --- Right Column: Innovative Principles Stack --- */
+.principles-content-col {
+  position: relative;
+}
+
+.principles-intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--color-mauve);
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+.principles-innovative-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.principles-thread-line {
+  position: absolute;
+  left: 28px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-gold) 0%, var(--color-medium-purple) 50%, var(--color-aubergine) 100%);
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* Innovative Principle Item Card */
+.principle-item-lux {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: var(--color-aubergine);
+  border: 1px solid rgba(201, 162, 75, 0.2);
+  border-radius: 8px;
+  padding: 1.25rem 1.6rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.principle-item-lux:hover {
+  background: var(--color-royal-purple);
+  border-color: var(--color-gold);
+  transform: translateX(12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 162, 75, 0.2);
+}
+
+.principle-num-badge {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-near-black);
+  background: var(--color-gold);
+  min-width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(201, 162, 75, 0.4);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.principle-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .principle-name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--color-text-light);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.principle-sanskrit {
+  font-family: var(--font-display-serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
 }
 
 .principle-desc {
   font-size: 0.88rem;
-  line-height: 1.65;
-  color: var(--text-75);
+  line-height: 1.6;
+  color: #FAF6EE;
   font-weight: 400;
+}
+
+@media (max-width: 992px) {
+  .principles-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
 }
 
 /* ==========================================================================
