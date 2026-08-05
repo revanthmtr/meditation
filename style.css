@@ -327,15 +327,15 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  filter: none;
+  filter: brightness(1.02) contrast(1.04);
   z-index: 1;
 }
 
 .hero-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(36, 21, 51, 0.95) 0%, rgba(36, 21, 51, 0.6) 50%, transparent 100%),
-              linear-gradient(to top, var(--color-near-black) 0%, transparent 35%);
+  background: linear-gradient(to right, rgba(36, 21, 51, 0.45) 0%, rgba(36, 21, 51, 0.1) 45%, transparent 100%),
+              linear-gradient(to top, rgba(36, 21, 51, 0.5) 0%, transparent 20%);
   pointer-events: none;
   z-index: 2;
 }
@@ -353,6 +353,7 @@ button {
   line-height: 0.95;
   font-family: var(--font-display-serif);
   margin-bottom: 1.2rem;
+  filter: drop-shadow(0 4px 18px rgba(20, 10, 30, 0.9));
 }
 
 .hero-brand-emblem .emblem-line {
@@ -361,6 +362,7 @@ button {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-shadow: 0 3px 15px rgba(20, 10, 30, 0.85);
 }
 
 .hero-brand-emblem .line-1, .hero-brand-emblem .line-3 {
@@ -379,14 +381,16 @@ button {
   font-style: italic;
   color: var(--color-gold);
   margin-bottom: 1.2rem;
+  text-shadow: 0 3px 12px rgba(20, 10, 30, 0.9);
 }
 
 .hero-subtext-body {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--text-90);
+  color: #FAF6EE;
   max-width: 620px;
   margin-bottom: 2.2rem;
+  text-shadow: 0 2px 12px rgba(20, 10, 30, 0.95), 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .hero-cta-wrap {
@@ -923,12 +927,13 @@ button {
   position: relative;
   background-color: var(--color-deep-violet);
   color: var(--color-text-light);
-  padding: clamp(110px, 12vw, 180px) 0;
+  padding: clamp(120px, 14vw, 200px) 0;
   text-align: center;
   overflow: hidden;
-  min-height: 520px;
+  min-height: 600px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .quote-mandala-watermark {
@@ -936,20 +941,24 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: min(780px, 90vw);
-  height: min(780px, 90vw);
-  opacity: 0.15;
+  width: min(640px, 85vw);
+  height: min(640px, 85vw);
+  aspect-ratio: 1 / 1;
+  padding: 1rem;
+  opacity: 0.42;
   pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .mandala-watermark-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(201, 162, 75, 0.45)) invert(0.85) sepia(1) saturate(5) hue-rotate(5deg);
 }
 
 .quote-content {
@@ -957,6 +966,7 @@ button {
   z-index: 5;
   max-width: 920px;
   margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .quote-text {
@@ -966,6 +976,7 @@ button {
   font-style: italic;
   line-height: 1.45;
   color: var(--color-text-light);
+  text-shadow: 0 4px 20px rgba(36, 21, 51, 0.9);
   margin-bottom: 2.5rem;
 }
 
