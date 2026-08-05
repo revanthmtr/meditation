@@ -1,43 +1,43 @@
 /* ==========================================================================
    KUMBHAKA DHYĀNA ĀŚRAMAM
-   Strict 4-Color Consolidated Design System
+   Refined Lighter Shade Design System
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 /* ==========================================================================
-   FINAL 4-COLOR SYSTEM
+   LIGHTER SHADE 4-COLOR PALETTE
    ========================================================================== */
 :root {
-  --color-ink:    #3B2352;  /* Deep Aubergine — dark text, footer, nav bg, dark panels */
-  --color-accent: #7B5A9E;  /* Muted Amethyst — icon strokes, links, secondary accents */
-  --color-gold:   #C9A24B;  /* Antique Gold — CTAs, dividers, highlights, icon fills */
-  --color-paper:  #FBF7F0;  /* Warm Ivory — all light backgrounds, cards, button text */
+  --color-ink:    #2B193D;  /* Deep Aubergine — crisp headers, legibility & footer */
+  --color-accent: #8E6EB3;  /* Lighter Soft Amethyst — icons, badges & links */
+  --color-gold:   #D1A948;  /* Luminous Champagne Gold — CTAs, dividers & highlights */
+  --color-paper:  #FDFBF7;  /* Ultra-Luminous Pearl Ivory — airy light background */
 
-  /* Derived Opacities using exact RGBs (59,35,82 / 123,90,158 / 201,162,75 / 251,247,240) */
-  --ink-90:  rgba(59, 35, 82, 0.9);
-  --ink-80:  rgba(59, 35, 82, 0.8);
-  --ink-70:  rgba(59, 35, 82, 0.7);
-  --ink-50:  rgba(59, 35, 82, 0.5);
-  --ink-30:  rgba(59, 35, 82, 0.3);
-  --ink-20:  rgba(59, 35, 82, 0.2);
-  --ink-12:  rgba(59, 35, 82, 0.12);
-  --ink-08:  rgba(59, 35, 82, 0.08);
-  --ink-05:  rgba(59, 35, 82, 0.05);
+  /* Derived Opacity Tokens using exact RGBs (43,25,61 / 142,110,179 / 209,169,72 / 253,251,247) */
+  --ink-90:  rgba(43, 25, 61, 0.9);
+  --ink-80:  rgba(43, 25, 61, 0.8);
+  --ink-70:  rgba(43, 25, 61, 0.7);
+  --ink-50:  rgba(43, 25, 61, 0.5);
+  --ink-30:  rgba(43, 25, 61, 0.3);
+  --ink-20:  rgba(43, 25, 61, 0.2);
+  --ink-12:  rgba(43, 25, 61, 0.12);
+  --ink-08:  rgba(43, 25, 61, 0.08);
+  --ink-05:  rgba(43, 25, 61, 0.03); /* Lighter 3% panel tint */
 
-  --accent-40: rgba(123, 90, 158, 0.4);
-  --accent-20: rgba(123, 90, 158, 0.2);
-  --accent-12: rgba(123, 90, 158, 0.12);
+  --accent-40: rgba(142, 110, 179, 0.4);
+  --accent-20: rgba(142, 110, 179, 0.2);
+  --accent-12: rgba(142, 110, 179, 0.12);
 
-  --gold-50: rgba(201, 162, 75, 0.5);
-  --gold-40: rgba(201, 162, 75, 0.4);
-  --gold-20: rgba(201, 162, 75, 0.2);
-  --gold-10: rgba(201, 162, 75, 0.1);
-  --gold-08: rgba(201, 162, 75, 0.08);
+  --gold-50: rgba(209, 169, 72, 0.5);
+  --gold-40: rgba(209, 169, 72, 0.4);
+  --gold-20: rgba(209, 169, 72, 0.2);
+  --gold-10: rgba(209, 169, 72, 0.1);
+  --gold-08: rgba(209, 169, 72, 0.08);
 
-  --paper-95: rgba(251, 247, 240, 0.95);
-  --paper-80: rgba(251, 247, 240, 0.8);
-  --paper-50: rgba(251, 247, 240, 0.5);
+  --paper-95: rgba(253, 251, 247, 0.95);
+  --paper-80: rgba(253, 251, 247, 0.8);
+  --paper-50: rgba(253, 251, 247, 0.5);
 
   /* Typography System */
   --font-display-serif: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
@@ -361,7 +361,7 @@ button {
 .hero-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, var(--paper-95) 0%, rgba(251, 247, 240, 0.4) 50%, transparent 100%),
+  background: linear-gradient(to right, var(--paper-95) 0%, rgba(253, 251, 247, 0.4) 50%, transparent 100%),
               linear-gradient(to top, var(--color-paper) 0%, transparent 25%);
   pointer-events: none;
   z-index: 2;
@@ -619,23 +619,25 @@ button {
   align-items: stretch;
 }
 
-/* Card Panel Background: var(--color-ink) at 5% opacity over paper */
+/* Card Panel Background: Crisp Pure White with Lighter Soft Gold/Amethyst Accent Shadow */
 .practice-card-lux {
-  background: var(--ink-05);
-  border: 1px solid var(--ink-12);
-  border-radius: 4px;
+  background: #FFFFFF;
+  border: 1px solid var(--gold-20);
+  border-radius: 6px;
   padding: 2.4rem 1.6rem 2rem 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
+  box-shadow: 0 10px 30px rgba(43, 25, 61, 0.04);
   transition: all 0.4s var(--transition-natural);
 }
 
 .practice-card-lux:hover {
   transform: translateY(-8px);
   border-color: var(--color-gold);
+  box-shadow: 0 16px 40px rgba(209, 169, 72, 0.15);
 }
 
 .practice-card-num-badge {
@@ -942,10 +944,6 @@ button {
 
 /* ==========================================================================
    8. TESTIMONIAL / SIGNATURE QUOTE BANNER
-   - Overlay gradient: var(--color-ink) at 55% opacity / ink 5%
-   - Quote text: var(--color-ink)
-   - Attribution: var(--color-gold)
-   - Mandala watermark: var(--color-gold) at 10% opacity
    ========================================================================== */
 .quote-section {
   position: relative;
@@ -966,7 +964,7 @@ button {
   transform: translate(-50%, -50%);
   width: min(780px, 90vw);
   height: min(780px, 90vw);
-  opacity: 0.10; /* var(--color-gold) at 10% opacity */
+  opacity: 0.10;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -1085,10 +1083,6 @@ button {
 
 /* ==========================================================================
    10. FOOTER
-   - Background: var(--color-ink) (#3B2352)
-   - Text/links: var(--color-paper) at 80% opacity
-   - Copyright: var(--color-paper) at 50% opacity
-   - Divider line: var(--color-gold) at 40% opacity
    ========================================================================== */
 .site-footer {
   background-color: var(--color-ink);
